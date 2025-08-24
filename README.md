@@ -2,7 +2,7 @@
 
 Um sistema completo de gerenciamento de projetos similar ao Jira/Asana, com módulo de recomendação inteligente baseado em IA.
 
-## 🚀 Características Principais
+##  Características Principais
 
 ### Core Features
 - **CRUD completo** de equipes, projetos e tarefas
@@ -19,7 +19,7 @@ Um sistema completo de gerenciamento de projetos similar ao Jira/Asana, com mód
 - **Otimizações automáticas** de fluxo de trabalho
 - **Insights de produtividade** da equipe
 
-## 🛠️ Stack Tecnológica
+##  Stack Tecnológica
 
 ### Backend
 - **Spring Boot 3.2** (Java 17)
@@ -37,7 +37,7 @@ Um sistema completo de gerenciamento de projetos similar ao Jira/Asana, com mód
 - **OpenAPI 3** para documentação da API
 - **JUnit 5** para testes
 
-## 📋 Pré-requisitos
+##  Pré-requisitos
 
 - **Java 17** ou superior
 - **Maven 3.8+**
@@ -47,7 +47,7 @@ Um sistema completo de gerenciamento de projetos similar ao Jira/Asana, com mód
 - **Elasticsearch 8+**
 - **Apache Kafka 3+**
 
-## 📦 Instalação
+##  Instalação
 
 ### 1. Clone o repositório
 ```bash
@@ -71,7 +71,7 @@ docker-compose up -d
 mvn spring-boot:run
 ```
 
-## 🌐 Acesso
+##  Acesso
 
 - **Aplicação**: http://localhost:8080
 - **API Docs**: http://localhost:8080/swagger-ui.html
@@ -80,7 +80,7 @@ mvn spring-boot:run
 - **Elasticsearch**: http://localhost:9200
 - **Kafka**: localhost:9092
 
-## 📚 Uso da API
+##  Uso da API
 
 ### Autenticação
 ```bash
@@ -172,7 +172,7 @@ ai:
     api-key: ${HUGGINGFACE_API_KEY}
 ```
 
-## 🏗️ Estrutura do Projeto
+##  Estrutura do Projeto
 
 ```
 src/
@@ -189,7 +189,7 @@ src/
 └── test/                      # Testes
 ```
 
-## 🤖 Funcionalidades de IA
+##  Funcionalidades de IA
 
 ### Estimativa de Duração
 - Análise de tarefas similares
@@ -211,7 +211,7 @@ src/
 - Sugere sequenciamento otimal
 - Analisa eficiência da equipe
 
-## 📊 Monitoramento
+##  Monitoramento
 
 ### Métricas Disponíveis
 - **Performance** da aplicação
@@ -225,7 +225,7 @@ src/
 - **Rastreamento** de usuários
 - **Mudanças críticas**
 
-## 🔒 Segurança
+##  Segurança
 
 - **JWT Authentication**
 - **Role-based Access Control**
@@ -234,7 +234,7 @@ src/
 - **XSS Protection**
 - **CSRF Protection**
 
-## 🧪 Testes
+##  Testes
 
 ```bash
 # Testes unitários
@@ -247,7 +247,7 @@ mvn verify
 mvn jacoco:report
 ```
 
-## 🚀 Deploy
+##  Deploy
 
 ### Docker
 ```bash
@@ -267,7 +267,7 @@ mvn clean package -Pprod
 java -jar target/proximaai-1.0.0.jar
 ```
 
-## 📈 Roadmap
+##  Roadmap
 
 - [ ] Frontend React com TypeScript
 - [ ] Sistema de relatórios avançados
@@ -283,7 +283,7 @@ java -jar target/proximaai-1.0.0.jar
 - [ ] Dashboard executivo
 - [ ] Machine Learning para predições
 
-## 🤝 Contribuição
+##  Contribuição
 
 1. Fork o projeto
 2. Crie uma branch para sua feature (`git checkout -b feature/NovaFuncionalidade`)
@@ -291,7 +291,7 @@ java -jar target/proximaai-1.0.0.jar
 4. Push para a branch (`git push origin feature/NovaFuncionalidade`)
 5. Abra um Pull Request
 
-## 📄 Licença
+##  Licença
 
 Este projeto está licenciado sob a **Licença MIT** - veja o arquivo LICENSE para detalhes.
 
@@ -319,24 +319,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-## 📞 Suporte
-
-- **Issues**: [GitHub Issues](https://github.com/SSilvestreS/proximaai/issues)
-- **Documentação**: [Wiki](https://github.com/SSilvestreS/proximaai/wiki)
-- **Email**: suporte@proxima.com
-
-## 🙏 Agradecimentos
-
-- **Spring Boot** - Framework Java incrível
-- **PostgreSQL** - Banco de dados robusto e confiável
-- **Redis** - Cache de alta performance
-- **Elasticsearch** - Busca e análise de dados
-- **Apache Kafka** - Streaming de eventos
-- **Docker** - Containerização que simplifica tudo
-- **GitHub** - Plataforma que torna o desenvolvimento colaborativo possível
-
 ---
 
 **⭐ Se este projeto te ajudou, considere dar uma estrela no GitHub! ⭐**
 
-**🚀 ProximaAI - Transformando a gestão de projetos com IA 🚀**
+** ProximaAI - Transformando a gestão de projetos com IA **
