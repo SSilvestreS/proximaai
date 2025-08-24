@@ -19,65 +19,66 @@ Um sistema completo de gerenciamento de projetos similar ao Jira/Asana, com mód
 - **Otimizações automáticas** de fluxo de trabalho
 - **Insights de produtividade** da equipe
 
-### Tecnologias
-- **Backend**: Spring Boot 3.2 + JPA/Hibernate
-- **Banco de Dados**: PostgreSQL + Redis
-- **Busca**: Elasticsearch
-- **Mensageria**: Apache Kafka
-- **Notificações**: WebSockets
-- **Segurança**: Spring Security + JWT
-- **Documentação**: OpenAPI 3
+## 🛠️ Stack Tecnológica
 
-## 🛠️ Pré-requisitos
+### Backend
+- **Spring Boot 3.2** (Java 17)
+- **JPA/Hibernate** para ORM
+- **PostgreSQL** para banco principal
+- **Redis** para cache
+- **Elasticsearch** para busca avançada
+- **Apache Kafka** para eventos assíncronos
+- **Spring Security + JWT** para autenticação
+- **WebSockets** para notificações em tempo real
 
-- Java 17 ou superior
-- Maven 3.6+
-- Docker e Docker Compose
-- 8GB RAM disponível (para todos os serviços)
+### Ferramentas
+- **Maven** para gerenciamento de dependências
+- **Docker & Docker Compose** para containerização
+- **OpenAPI 3** para documentação da API
+- **JUnit 5** para testes
+
+## 📋 Pré-requisitos
+
+- **Java 17** ou superior
+- **Maven 3.8+**
+- **Docker** e **Docker Compose**
+- **PostgreSQL 14+**
+- **Redis 6+**
+- **Elasticsearch 8+**
+- **Apache Kafka 3+**
 
 ## 📦 Instalação
 
 ### 1. Clone o repositório
 ```bash
-git clone https://github.com/seu-usuario/ProximaAI.git
-cd ProximaAI
+git clone https://github.com/SSilvestreS/proximaai.git
+cd proximaai
 ```
 
 ### 2. Configure as variáveis de ambiente
 ```bash
-# Copie o arquivo de exemplo
-cp .env.example .env
-
-# Edite as variáveis necessárias
-nano .env
+cp env.example .env
+# Edite o arquivo .env com suas configurações
 ```
 
-### 3. Inicie os serviços de infraestrutura
+### 3. Inicie os serviços com Docker
 ```bash
-# Inicia PostgreSQL, Redis, Elasticsearch e Kafka
-docker-compose up -d postgres redis elasticsearch kafka
-
-# Aguarde todos os serviços estarem prontos
-docker-compose ps
+docker-compose up -d
 ```
 
 ### 4. Execute a aplicação
 ```bash
-# Compila e executa
 mvn spring-boot:run
-
-# Ou compile primeiro e depois execute
-mvn clean package
-java -jar target/proxima-project-manager-1.0.0.jar
 ```
 
-## 🌐 Acessos
+## 🌐 Acesso
 
-- **Aplicação Principal**: http://localhost:8080
-- **API Documentation**: http://localhost:8080/swagger-ui.html
-- **Kafka UI**: http://localhost:8080
-- **Kibana**: http://localhost:5601
-- **pgAdmin**: http://localhost:5050
+- **Aplicação**: http://localhost:8080
+- **API Docs**: http://localhost:8080/swagger-ui.html
+- **PostgreSQL**: localhost:5432
+- **Redis**: localhost:6379
+- **Elasticsearch**: http://localhost:9200
+- **Kafka**: localhost:9092
 
 ## 📚 Uso da API
 
@@ -87,45 +88,56 @@ java -jar target/proxima-project-manager-1.0.0.jar
 POST /api/auth/login
 {
   "username": "admin",
-  "password": "admin123"
+  "password": "password"
 }
 
-# Use o token retornado no header Authorization
-Authorization: Bearer <seu-token>
+# Usar o token retornado
+Authorization: Bearer <token>
 ```
 
-### Exemplos de Uso
+### Exemplos de Endpoints
 
-#### Criar um Projeto
+#### Usuários
 ```bash
+# Listar usuários
+GET /api/users
+
+# Criar usuário
+POST /api/users
+{
+  "username": "novo_usuario",
+  "email": "usuario@exemplo.com",
+  "role": "USER"
+}
+```
+
+#### Projetos
+```bash
+# Listar projetos
+GET /api/projects
+
+# Criar projeto
 POST /api/projects
 {
   "name": "Novo Projeto",
   "description": "Descrição do projeto",
-  "priority": "HIGH",
-  "startDate": "2024-01-01",
-  "endDate": "2024-06-30"
+  "priority": "HIGH"
 }
 ```
 
-#### Criar uma Tarefa
+#### Tarefas
 ```bash
+# Listar tarefas
+GET /api/tasks
+
+# Criar tarefa
 POST /api/tasks
 {
-  "title": "Implementar Login",
-  "description": "Criar sistema de autenticação",
-  "projectId": 1,
-  "type": "FEATURE",
-  "priority": "HIGH",
-  "estimatedHours": 16
+  "title": "Nova Tarefa",
+  "description": "Descrição da tarefa",
+  "priority": "MEDIUM",
+  "type": "FEATURE"
 }
-```
-
-#### Obter Recomendações de IA
-```bash
-GET /api/ai/projects/1/recommendations
-GET /api/ai/tasks/1/duration-estimate
-GET /api/ai/users/1/overload-check
 ```
 
 ## 🔧 Configuração
@@ -134,31 +146,30 @@ GET /api/ai/users/1/overload-check
 ```yaml
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/proxima_projects
-    username: postgres
-    password: password
+    url: jdbc:postgresql://localhost:5432/proximaai
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   
-  kafka:
-    bootstrap-servers: localhost:9092
-  
-  data:
-    elasticsearch:
-      uris: http://localhost:9200
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+  redis:
+    host: localhost
+    port: 6379
+
+elasticsearch:
+  uri: http://localhost:9200
+
+kafka:
+  bootstrap-servers: localhost:9092
 
 ai:
   openai:
-    api-key: ${OPENAI_API_KEY:}
-    model: gpt-3.5-turbo
-```
-
-### Variáveis de Ambiente
-```bash
-# OpenAI (opcional)
-OPENAI_API_KEY=sk-...
-
-# Email (opcional)
-EMAIL_USERNAME=seu-email@gmail.com
-EMAIL_PASSWORD=sua-senha-app
+    api-key: ${OPENAI_API_KEY}
+  huggingface:
+    api-key: ${HUGGINGFACE_API_KEY}
 ```
 
 ## 🏗️ Estrutura do Projeto
@@ -167,70 +178,69 @@ EMAIL_PASSWORD=sua-senha-app
 src/
 ├── main/
 │   ├── java/com/proximaai/
-│   │   ├── config/          # Configurações
-│   │   ├── domain/          # Entidades JPA
-│   │   ├── repository/      # Repositórios
-│   │   ├── service/         # Lógica de negócio
-│   │   │   └── ai/         # Serviços de IA
-│   │   ├── controller/      # APIs REST
+│   │   ├── domain/entity/     # Entidades JPA
+│   │   ├── repository/         # Repositórios
+│   │   ├── service/           # Lógica de negócio
+│   │   │   └── ai/           # Serviços de IA
+│   │   ├── config/            # Configurações
 │   │   └── ProximaProjectManagerApplication.java
 │   └── resources/
 │       └── application.yml
-└── test/                    # Testes
+└── test/                      # Testes
 ```
 
 ## 🤖 Funcionalidades de IA
 
 ### Estimativa de Duração
-- Analisa descrição da tarefa
-- Considera histórico do projeto
-- Ajusta baseado em tipo e prioridade
+- Análise de tarefas similares
+- Consideração de complexidade
+- Ajuste baseado na equipe
 
 ### Detecção de Sobrecarga
-- Monitora tarefas ativas por usuário
-- Calcula horas estimadas vs. disponibilidade
-- Alerta quando limite é excedido
+- Monitoramento de carga de trabalho
+- Alertas automáticos
+- Sugestões de redistribuição
 
 ### Análise de Riscos
-- Identifica tarefas atrasadas
-- Detecta gargalos na equipe
-- Avalia precisão das estimativas
+- Identificação de gargalos
+- Previsão de atrasos
+- Recomendações de mitigação
 
-### Otimizações
-- Sugere paralelização de tarefas
-- Recomenda ordem ideal de execução
+### Otimização de Processos
 - Identifica melhorias no processo
+- Sugere sequenciamento otimal
+- Analisa eficiência da equipe
 
 ## 📊 Monitoramento
 
 ### Métricas Disponíveis
-- Progresso do projeto
-- Velocidade da equipe
-- Precisão das estimativas
-- Tempo em cada status
-- Produtividade por membro
+- **Performance** da aplicação
+- **Uso de recursos** do sistema
+- **Tempo de resposta** das APIs
+- **Taxa de erro** das operações
 
-### Alertas Automáticos
-- Tarefas atrasadas
-- Sobrecarga de usuários
-- Riscos identificados
-- Mudanças críticas
+### Logs e Auditoria
+- **Todas as operações** são registradas
+- **Histórico completo** de mudanças
+- **Rastreamento** de usuários
+- **Mudanças críticas**
 
 ## 🔒 Segurança
 
 - **JWT Authentication**
 - **Role-based Access Control**
-- **Audit Logging** de todas as ações
 - **Input Validation**
 - **SQL Injection Protection**
+- **XSS Protection**
+- **CSRF Protection**
 
 ## 🧪 Testes
 
 ```bash
-# Executa todos os testes
+# Testes unitários
 mvn test
 
-# Executa testes de integração
+# Testes de integração
 mvn verify
 
 # Cobertura de código
@@ -242,49 +252,91 @@ mvn jacoco:report
 ### Docker
 ```bash
 # Build da imagem
-docker build -t proxima-ai .
+docker build -t proximaai .
 
-# Execução
-docker run -p 8080:8080 proxima-ai
+# Executar container
+docker run -p 8080:8080 proximaai
 ```
 
-### Kubernetes
+### Produção
 ```bash
-# Aplica os manifests
-kubectl apply -f k8s/
+# Build para produção
+mvn clean package -Pprod
 
-# Verifica o status
-kubectl get pods
+# Executar JAR
+java -jar target/proximaai-1.0.0.jar
 ```
 
 ## 📈 Roadmap
 
 - [ ] Frontend React com TypeScript
-- [ ] Integração com GitHub/GitLab
-- [ ] Relatórios avançados
-- [ ] Mobile App
+- [ ] Sistema de relatórios avançados
+- [ ] Integração com calendário
+- [ ] Chat interno integrado
+- [ ] Sistema de arquivos e anexos
+- [ ] API GraphQL
+- [ ] Sistema de plugins
+- [ ] Modo offline
+- [ ] Aplicativo móvel nativo
 - [ ] Integração com Slack/Teams
+- [ ] Sistema de timesheet
+- [ ] Dashboard executivo
 - [ ] Machine Learning para predições
 
 ## 🤝 Contribuição
 
 1. Fork o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
+2. Crie uma branch para sua feature (`git checkout -b feature/NovaFuncionalidade`)
+3. Commit suas mudanças (`git commit -m 'feat: adiciona nova funcionalidade'`)
+4. Push para a branch (`git push origin feature/NovaFuncionalidade`)
 5. Abra um Pull Request
 
 ## 📄 Licença
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto está licenciado sob a **Licença MIT** - veja o arquivo LICENSE para detalhes.
+
+```
+MIT License
+
+Copyright (c) 2024 ProximaAI Team
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
 
 ## 📞 Suporte
 
-- **Issues**: [GitHub Issues](https://github.com/seu-usuario/ProximaAI/issues)
-- **Documentação**: [Wiki](https://github.com/seu-usuario/ProximaAI/wiki)
+- **Issues**: [GitHub Issues](https://github.com/SSilvestreS/proximaai/issues)
+- **Documentação**: [Wiki](https://github.com/SSilvestreS/proximaai/wiki)
 - **Email**: suporte@proxima.com
 
+## 🙏 Agradecimentos
+
+- **Spring Boot** - Framework Java incrível
+- **PostgreSQL** - Banco de dados robusto e confiável
+- **Redis** - Cache de alta performance
+- **Elasticsearch** - Busca e análise de dados
+- **Apache Kafka** - Streaming de eventos
+- **Docker** - Containerização que simplifica tudo
+- **GitHub** - Plataforma que torna o desenvolvimento colaborativo possível
 
 ---
 
-**ProximaAI** - Transformando a gestão de projetos com inteligência artificial.
+**⭐ Se este projeto te ajudou, considere dar uma estrela no GitHub! ⭐**
+
+**🚀 ProximaAI - Transformando a gestão de projetos com IA 🚀**
