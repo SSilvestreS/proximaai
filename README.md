@@ -325,4 +325,4 @@ SOFTWARE.
 
 **⭐ Se este projeto te ajudou, considere dar uma estrela no GitHub! ⭐**
 
-** ProximaAI - Transformando a gestão de projetos com IA **
+
