@@ -201,7 +201,7 @@ src/
 - Recomenda ordem ideal de execução
 - Identifica melhorias no processo
 
-## 📊 Monitoramento
+##  Monitoramento
 
 ### Métricas Disponíveis
 - Progresso do projeto
