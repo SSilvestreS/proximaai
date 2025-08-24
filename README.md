@@ -2,7 +2,7 @@
 
 Um sistema completo de gerenciamento de projetos similar ao Jira/Asana, com módulo de recomendação inteligente baseado em IA.
 
-## 🚀 Características Principais
+##  Características Principais
 
 ### Core Features
 - **CRUD completo** de equipes, projetos e tarefas
@@ -28,14 +28,14 @@ Um sistema completo de gerenciamento de projetos similar ao Jira/Asana, com mód
 - **Segurança**: Spring Security + JWT
 - **Documentação**: OpenAPI 3
 
-## 🛠️ Pré-requisitos
+##  Pré-requisitos
 
 - Java 17 ou superior
 - Maven 3.6+
 - Docker e Docker Compose
 - 8GB RAM disponível (para todos os serviços)
 
-## 📦 Instalação
+##  Instalação
 
 ### 1. Clone o repositório
 ```bash
@@ -71,7 +71,7 @@ mvn clean package
 java -jar target/proxima-project-manager-1.0.0.jar
 ```
 
-## 🌐 Acessos
+##  Acessos
 
 - **Aplicação Principal**: http://localhost:8080
 - **API Documentation**: http://localhost:8080/swagger-ui.html
@@ -79,7 +79,7 @@ java -jar target/proxima-project-manager-1.0.0.jar
 - **Kibana**: http://localhost:5601
 - **pgAdmin**: http://localhost:5050
 
-## 📚 Uso da API
+##  Uso da API
 
 ### Autenticação
 ```bash
@@ -161,7 +161,7 @@ EMAIL_USERNAME=seu-email@gmail.com
 EMAIL_PASSWORD=sua-senha-app
 ```
 
-## 🏗️ Estrutura do Projeto
+##  Estrutura do Projeto
 
 ```
 src/
@@ -179,7 +179,7 @@ src/
 └── test/                    # Testes
 ```
 
-## 🤖 Funcionalidades de IA
+##  Funcionalidades de IA
 
 ### Estimativa de Duração
 - Analisa descrição da tarefa
@@ -216,7 +216,7 @@ src/
 - Riscos identificados
 - Mudanças críticas
 
-## 🔒 Segurança
+##  Segurança
 
 - **JWT Authentication**
 - **Role-based Access Control**
@@ -224,7 +224,7 @@ src/
 - **Input Validation**
 - **SQL Injection Protection**
 
-## 🧪 Testes
+##  Testes
 
 ```bash
 # Executa todos os testes
@@ -237,7 +237,7 @@ mvn verify
 mvn jacoco:report
 ```
 
-## 🚀 Deploy
+##  Deploy
 
 ### Docker
 ```bash
@@ -257,7 +257,7 @@ kubectl apply -f k8s/
 kubectl get pods
 ```
 
-## 📈 Roadmap
+##  Roadmap
 
 - [ ] Frontend React com TypeScript
 - [ ] Integração com GitHub/GitLab
@@ -266,7 +266,7 @@ kubectl get pods
 - [ ] Integração com Slack/Teams
 - [ ] Machine Learning para predições
 
-## 🤝 Contribuição
+##  Contribuição
 
 1. Fork o projeto
 2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
@@ -274,15 +274,9 @@ kubectl get pods
 4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
-## 📄 Licença
+##  Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## 📞 Suporte
-
-- **Issues**: [GitHub Issues](https://github.com/seu-usuario/ProximaAI/issues)
-- **Documentação**: [Wiki](https://github.com/seu-usuario/ProximaAI/wiki)
-- **Email**: suporte@proxima.com
 
 
 ---
