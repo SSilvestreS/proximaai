@@ -99,6 +99,12 @@ public class Task {
     @OneToMany(mappedBy = "task", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<TaskTimeLog> timeLogs = new ArrayList<>();
 
+    @OneToMany(mappedBy = "dependentTask", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<TaskDependency> dependencies = new ArrayList<>();
+
+    @OneToMany(mappedBy = "prerequisiteTask", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<TaskDependency> prerequisites = new ArrayList<>();
+
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
