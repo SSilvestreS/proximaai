@@ -1,6 +1,8 @@
 # ProximaAI - Sistema de Gestão de Projetos com IA Assistente
 
-Um sistema completo de gerenciamento de projetos similar ao Jira/Asana, com módulo de recomendação inteligente baseado em IA.
+O sistema permite gerenciar equipes, projetos e tarefas de forma completa, com Kanban interativo, controle de acesso por papéis, auditoria detalhada e notificações em tempo real. Sua inteligência artificial analisa histórico de projetos e capacidade da equipe para estimar prazos, detectar sobrecarga, sugerir otimizações de fluxo e identificar riscos, oferecendo insights acionáveis para líderes e colaboradores.
+
+Construído com Spring Boot, PostgreSQL, Redis, Elasticsearch e Kafka, e integrando modelos de IA, o ProximaAI é escalável, seguro e modular, ideal para empresas que buscam automatizar decisões, aumentar a eficiência e transformar dados de projetos em resultados estratégicos.
 
 ##  Características Principais
 
