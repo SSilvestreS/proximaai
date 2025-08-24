@@ -1,4 +1,4 @@
-# 🚀 ProximaAI - Project Manager
+#  ProximaAI - Project Manager
 
 [![Java](https://img.shields.io/badge/Java-17-orange.svg)](https://openjdk.java.net/projects/jdk/17/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2-green.svg)](https://spring.io/projects/spring-boot)
@@ -12,26 +12,26 @@ O sistema permite gerenciar equipes, projetos e tarefas de forma completa, com K
 
 Construído com Spring Boot, PostgreSQL, Redis, Elasticsearch e Kafka, e integrando modelos de IA, o ProximaAI é escalável, seguro e modular, ideal para empresas que buscam automatizar decisões, aumentar a eficiência e transformar dados de projetos em resultados estratégicos.
 
-## 📋 **Índice**
+##  **Índice**
 
-- [🎯 **Visão Geral**](#-visão-geral)
-- [🚀 **Funcionalidades Avançadas de Negócio**](#-funcionalidades-avançadas-de-negócio)
-- [🤖 **IA Assistente**](#-ia-assistente)
-- [🏗️ **Estrutura do Projeto**](#️-estrutura-do-projeto)
-- [🛠️ **Tecnologias**](#️-tecnologias)
-- [📦 **Instalação**](#-instalação)
-- [🚀 **Execução**](#-execução)
-- [📊 **Monitoramento**](#-monitoramento)
-- [🧪 **Testes**](#-testes)
-- [📝 **API Documentation**](#-api-documentation)
-- [🤝 **Contribuição**](#-contribuição)
-- [📄 **Licença**](#-licença)
+- [ **Visão Geral**](#-visão-geral)
+- [ **Funcionalidades Avançadas de Negócio**](#-funcionalidades-avançadas-de-negócio)
+- [ **IA Assistente**](#-ia-assistente)
+- [ **Estrutura do Projeto**](#️-estrutura-do-projeto)
+- [ **Tecnologias**](#️-tecnologias)
+- [ **Instalação**](#-instalação)
+- [ **Execução**](#-execução)
+- [ **Monitoramento**](#-monitoramento)
+- [ **Testes**](#-testes)
+- [ **API Documentation**](#-api-documentation)
+- [ **Contribuição**](#-contribuição)
+- [ **Licença**](#-licença)
 
-## 🎯 **Visão Geral**
+##  **Visão Geral**
 
 O **ProximaAI** é uma plataforma avançada de gerenciamento de projetos que combina metodologias tradicionais com inteligência artificial para otimizar processos, prever riscos e maximizar a produtividade das equipes.
 
-### ✨ **Características Principais**
+###  **Características Principais**
 
 - **Gestão Inteligente** de projetos, tarefas e equipes
 - **IA Assistente** para estimativas, análise de riscos e otimizações
@@ -42,46 +42,46 @@ O **ProximaAI** é uma plataforma avançada de gerenciamento de projetos que com
 - **Sistema de Dependências** entre tarefas
 - **Monitoramento em Tempo Real** com dashboards interativos
 
-## 🚀 **Funcionalidades Avançadas de Negócio**
+##  **Funcionalidades Avançadas de Negócio**
 
-### 🔗 **Dependências de Tarefas**
+###  **Dependências de Tarefas**
 - **Controle Completo** de dependências entre tarefas
 - **Tipos Flexíveis**: Finish-to-Start, Start-to-Start, Finish-to-Finish, Start-to-Finish
 - **Gestão de Lag/Lead** para otimização de cronogramas
 - **Identificação de Caminhos Críticos** automática
 - **Prevenção de Deadlocks** e dependências circulares
 
-### 💰 **Gestão de Recursos e Orçamento**
+###  **Gestão de Recursos e Orçamento**
 - **Alocação Inteligente** de recursos humanos, equipamentos e software
 - **Controle de Custos** em tempo real
 - **Gestão de Orçamento** com alertas de estouro
 - **Análise de Capacidade** e disponibilidade
 - **Relatórios Financeiros** detalhados
 
-### 🔄 **Workflows Customizáveis**
+###  **Workflows Customizáveis**
 - **Criação de Fluxos** personalizados por equipe
 - **Status Dinâmicos** com cores e ícones
 - **Transições Condicionais** com regras de negócio
 - **Sistema de Aprovações** configurável
 - **Automação de Processos** com triggers
 
-### 📋 **Templates de Projetos**
+###  **Templates de Projetos**
 - **Modelos Categorizados** por tipo de projeto
 - **Componentes Reutilizáveis**: tarefas, marcos e recursos
 - **Estimativas Automáticas** de tempo e custo
 - **Biblioteca de Templates** compartilhável
 - **Versionamento** de templates
 
-### ⏰ **Timesheet Profissional**
+###  **Timesheet Profissional**
 - **Controle de Tempo** com start/stop automático
 - **Categorização de Atividades** por tipo de trabalho
 - **Sistema de Aprovações** hierárquico
 - **Cálculo Automático** de horas faturáveis
 - **Integração com Folha de Pagamento**
 
-## 🤖 **IA Assistente**
+##  **IA Assistente**
 
-### 🧠 **Capacidades Inteligentes**
+###  **Capacidades Inteligentes**
 
 - **Estimativa de Tarefas** baseada em histórico e complexidade
 - **Detecção de Sobrecarga** de trabalho e burnout
@@ -91,7 +91,7 @@ O **ProximaAI** é uma plataforma avançada de gerenciamento de projetos que com
 - **Insights de Produtividade** personalizados
 - **Previsão de Atrasos** com alertas antecipados
 
-### 📊 **Análise Preditiva**
+###  **Análise Preditiva**
 
 - **Machine Learning** para estimativas de tempo
 - **Análise de Padrões** de produtividade
@@ -99,43 +99,43 @@ O **ProximaAI** é uma plataforma avançada de gerenciamento de projetos que com
 - **Recomendações de Melhorias** baseadas em dados
 - **Relatórios Inteligentes** com insights acionáveis
 
-## 🏗️ **Estrutura do Projeto**
+##  **Estrutura do Projeto**
 
 ```
 ProximaAI/
-├── 📁 src/main/java/com/proximaai/
-│   ├── 📁 domain/entity/          # Entidades JPA
-│   │   ├── 📁 core/               # Entidades principais
+├── src/main/java/com/proximaai/
+│   ├── domain/entity/          # Entidades JPA
+│   │   ├── core/               # Entidades principais
 │   │   │   ├── User.java
 │   │   │   ├── Project.java
 │   │   │   ├── Task.java
 │   │   │   ├── Team.java
 │   │   │   └── Notification.java
-│   │   ├── 📁 business/           # Funcionalidades de negócio
+│   │   ├── business/           # Funcionalidades de negócio
 │   │   │   ├── TaskDependency.java
 │   │   │   ├── ResourceAllocation.java
 │   │   │   ├── CustomWorkflow.java
 │   │   │   ├── ProjectTemplate.java
 │   │   │   └── Timesheet.java
-│   │   └── 📁 workflow/           # Sistema de workflows
+│   │   └── workflow/           # Sistema de workflows
 │   │       ├── WorkflowStatus.java
 │   │       └── WorkflowTransition.java
-│   ├── 📁 repository/              # Repositórios JPA
-│   ├── 📁 service/                 # Lógica de negócio
-│   │   ├── 📁 ai/                  # Serviços de IA
-│   │   ├── 📁 business/            # Serviços de negócio
-│   │   └── 📁 workflow/            # Serviços de workflow
-│   ├── 📁 config/                  # Configurações
+│   ├── repository/              # Repositórios JPA
+│   ├── service/                 # Lógica de negócio
+│   │   ├── ai/                  # Serviços de IA
+│   │   ├── business/            # Serviços de negócio
+│   │   └── workflow/            # Serviços de workflow
+│   ├── config/                  # Configurações
 │   └── ProximaProjectManagerApplication.java
-├── 📁 src/main/resources/          # Configurações e recursos
-├── 📁 src/test/                    # Testes automatizados
-├── 📁 docker/                      # Configurações Docker
-├── 📄 pom.xml                      # Dependências Maven
-├── 📄 docker-compose.yml           # Orquestração de containers
-└── 📄 README.md                    # Documentação
+├── src/main/resources/          # Configurações e recursos
+├── src/test/                    # Testes automatizados
+├── docker/                      # Configurações Docker
+├── pom.xml                      # Dependências Maven
+├── docker-compose.yml           # Orquestração de containers
+└── README.md                    # Documentação
 ```
 
-## 🛠️ **Tecnologias**
+##  **Tecnologias**
 
 ### **Backend**
 - **Java 17** - Linguagem principal
@@ -162,7 +162,7 @@ ProximaAI/
 - **Kafka UI** - Interface para gerenciamento do Kafka
 - **Kibana** - Visualização e análise de dados
 
-## 📦 **Instalação**
+## **Instalação**
 
 ### **Pré-requisitos**
 - Java 17 ou superior
@@ -184,7 +184,7 @@ cp src/main/resources/application-example.yml src/main/resources/application.yml
 nano src/main/resources/application.yml
 ```
 
-## 🚀 **Execução**
+## **Execução**
 
 ### **Execução com Docker Compose (Recomendado)**
 ```bash
@@ -216,7 +216,7 @@ mvn spring-boot:run
 - **Kafka UI**: http://localhost:8080/kafka-ui
 - **Kibana**: http://localhost:5601
 
-## 📊 **Monitoramento**
+## **Monitoramento**
 
 ### **Dashboards Disponíveis**
 - **Métricas de Projetos** - Status, progresso e KPIs
@@ -231,7 +231,7 @@ mvn spring-boot:run
 - **Estouro de Orçamento** com alertas financeiros
 - **Problemas de Dependências** com sugestões de resolução
 
-## 🧪 **Testes**
+## **Testes**
 
 ### **Execução de Testes**
 ```bash
@@ -267,7 +267,7 @@ mvn jacoco:report
 - **`/api/v1/resources`** - Alocação de recursos
 - **`/api/v1/templates`** - Templates de projetos
 
-## 🤝 **Contribuição**
+## **Contribuição**
 
 ### **Como Contribuir**
 1. **Fork** o projeto
@@ -282,13 +282,13 @@ mvn jacoco:report
 - **Testes Obrigatórios** - Cobertura mínima de 80%
 - **Documentação** - JavaDoc para APIs públicas
 
-## 📄 **Licença**
+## **Licença**
 
 Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 ---
 
-## 🆕 **Changelog - Versão 1.1.0**
+## **Changelog - Versão 1.1.0**
 
 ### **Novas Funcionalidades**
 - ✨ **Sistema de Dependências de Tarefas** - Controle completo de dependências entre tarefas
@@ -303,12 +303,11 @@ Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE](L
 - 🔧 **Relacionamentos JPA** - Mapeamentos otimizados com fetch strategies apropriadas
 
 ### **Correções**
-- 🐛 **Imports Não Utilizados** - Remoção de imports desnecessários
-- 🐛 **Deprecated APIs** - Atualização de BigDecimal.ROUND_HALF_UP para RoundingMode.HALF_UP
+-  **Imports Não Utilizados** - Remoção de imports desnecessários
+-  **Deprecated APIs** - Atualização de BigDecimal.ROUND_HALF_UP para RoundingMode.HALF_UP
 
 ---
 
-**Desenvolvido com ❤️ pela equipe ProximaAI**
 
 [![GitHub](https://img.shields.io/badge/GitHub-ProximaAI-black.svg)](https://github.com/seu-usuario/ProximaAI)
 [![Issues](https://img.shields.io/badge/Issues-Welcome-brightgreen.svg)](https://github.com/seu-usuario/ProximaAI/issues)
