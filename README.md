@@ -278,13 +278,6 @@ kubectl get pods
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## 📞 Suporte
-
-- **Issues**: [GitHub Issues](https://github.com/seu-usuario/ProximaAI/issues)
-- **Documentação**: [Wiki](https://github.com/seu-usuario/ProximaAI/wiki)
-- **Email**: suporte@proxima.com
-
-
 ---
 
 **ProximaAI** - Transformando a gestão de projetos com inteligência artificial.
