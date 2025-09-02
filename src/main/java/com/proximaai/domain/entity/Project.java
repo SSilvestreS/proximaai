@@ -43,14 +43,6 @@ public class Project {
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Task> tasks = new HashSet<>();
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "workflow_id")
-    private CustomWorkflow workflow;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "template_id")
-    private ProjectTemplate template;
-
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private ProjectStatus status = ProjectStatus.PLANNING;

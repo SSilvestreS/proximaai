@@ -1,4 +1,4 @@
-# **Funcionalidades de IA Avançada - ProximaAI v1.2.0**
+# **Funcionalidades de IA Avançada - ProximaAI v1.3.0**
 
 > **Sistema Inteligente de Gerenciamento de Projetos com Machine Learning e IA Generativa**
 
@@ -266,7 +266,11 @@ src/main/java/com/proximaai/
 |------------|--------|----------|
 | **Entidades JPA** | ✅ **COMPLETO** | 6 entidades criadas |
 | **Repositórios JPA** | ✅ **COMPLETO** | 6 repositórios implementados |
-| **Compilação** | ✅ **COMPLETO** | 39 arquivos compilando |
+| **Serviços de IA** | ✅ **COMPLETO** | 5 serviços implementados |
+| **Controllers REST** | ✅ **COMPLETO** | 5 controllers com APIs completas |
+| **Algoritmos ML** | ✅ **COMPLETO** | MLAlgorithmService implementado |
+| **Configurações** | ✅ **COMPLETO** | AIConfig e application.yml |
+| **Compilação** | ✅ **COMPLETO** | 50+ arquivos compilando |
 | **Documentação** | ✅ **COMPLETO** | README, CHANGELOG, AI_OVERVIEW |
 
 ### **Fluxo de Dados**
@@ -293,11 +297,58 @@ src/main/java/com/proximaai/
 
 ### **Tecnologias de IA**
 
-- **Machine Learning**: Scikit-learn, TensorFlow
-- **NLP**: SpaCy, NLTK, Transformers
-- **Clustering**: K-means, DBSCAN, Hierarchical
-- **Sentiment Analysis**: BERT, VADER
-- **Text Generation**: GPT, T5, BART
+- **Machine Learning**: Apache Commons Math3, OpenNLP
+- **NLP**: Apache OpenNLP, Análise de Sentimento
+- **Clustering**: K-means implementado
+- **Sentiment Analysis**: Algoritmo baseado em palavras-chave
+- **Text Generation**: OpenAI GPT, IA Generativa
+- **APIs REST**: Spring Boot, OpenAPI/Swagger
+- **Processamento Assíncrono**: Spring Async, ThreadPoolTaskExecutor
+
+### **APIs REST Disponíveis**
+
+#### **Predição de Atrasos**
+```
+POST   /api/ai/delay-predictions/task/{taskId}           # Gerar predição
+GET    /api/ai/delay-predictions/task/{taskId}           # Buscar predições
+GET    /api/ai/delay-predictions/critical                # Predições críticas
+GET    /api/ai/delay-predictions/high-confidence         # Alta confiança
+PUT    /api/ai/delay-predictions/{id}/accuracy           # Atualizar precisão
+```
+
+#### **Recomendações de Alocação**
+```
+POST   /api/ai/allocation-recommendations/task/{taskId}  # Gerar recomendações
+GET    /api/ai/allocation-recommendations/task/{taskId}  # Buscar recomendações
+GET    /api/ai/allocation-recommendations/task/{taskId}/best # Melhor recomendação
+PUT    /api/ai/allocation-recommendations/{id}/implement # Marcar como implementada
+```
+
+#### **Resumos Automáticos**
+```
+POST   /api/ai/project-summaries/project/{projectId}     # Gerar resumo
+GET    /api/ai/project-summaries/project/{projectId}     # Buscar resumos
+GET    /api/ai/project-summaries/project/{projectId}/latest # Mais recente
+PUT    /api/ai/project-summaries/{id}/approve            # Aprovar resumo
+```
+
+#### **Análise de Sentimento**
+```
+POST   /api/ai/sentiment-analysis/project/{projectId}/team/{teamId} # Analisar
+GET    /api/ai/sentiment-analysis/project/{projectId}    # Buscar análises
+GET    /api/ai/sentiment-analysis/project/{projectId}/wellness-report # Relatório
+GET    /api/ai/sentiment-analysis/project/{projectId}/team-health-score # Score
+```
+
+#### **APIs Principais de IA**
+```
+POST   /api/ai/tasks/{taskId}/estimate-duration          # Estimar duração
+GET    /api/ai/tasks/{taskId}/priority-score             # Score de prioridade
+GET    /api/ai/users/{userId}/overload-check             # Verificar sobrecarga
+POST   /api/ai/tasks/{taskId}/suggest-deadline           # Sugerir prazo
+GET    /api/ai/projects/{projectId}/risks                # Analisar riscos
+GET    /api/ai/projects/{projectId}/bottlenecks          # Identificar gargalos
+```
 
 ---
 
@@ -370,18 +421,24 @@ O ProximaAI v1.2.0 representa um **marco revolucionário** na gestão de projeto
 ### **Próximos Passos**
 
 1. **✅ Implementar Repositórios** para as novas entidades - **COMPLETO**
-2. **🔄 Desenvolver Serviços** de IA e ML - **EM DESENVOLVIMENTO**
-3. **⏳ Criar Controllers** para APIs REST - **PRÓXIMO**
-4. **⏳ Implementar Dashboards** inteligentes - **FUTURO**
-5. **⏳ Desenvolver Interface** de usuário moderna - **FUTURO**
+2. **✅ Desenvolver Serviços** de IA e ML - **COMPLETO**
+3. **✅ Criar Controllers** para APIs REST - **COMPLETO**
+4. **✅ Implementar Algoritmos ML** - **COMPLETO**
+5. **✅ Configurar Sistema** de IA - **COMPLETO**
+6. **⏳ Implementar Testes** automatizados - **PRÓXIMO**
+7. **⏳ Criar Dashboards** inteligentes - **FUTURO**
+8. **⏳ Desenvolver Interface** de usuário moderna - **FUTURO**
 
-### **Progresso da Versão 1.2.0**
+### **Progresso da Versão 1.3.0**
 
 - **Fase 1**: ✅ **Entidades JPA** - COMPLETA
 - **Fase 2**: ✅ **Repositórios JPA** - COMPLETA  
-- **Fase 3**: 🔄 **Serviços de IA** - EM ANDAMENTO
-- **Fase 4**: ⏳ **Controllers REST** - PRÓXIMA
-- **Fase 5**: ⏳ **Testes e Validação** - FUTURA
+- **Fase 3**: ✅ **Serviços de IA** - COMPLETA
+- **Fase 4**: ✅ **Controllers REST** - COMPLETA
+- **Fase 5**: ✅ **Algoritmos ML** - COMPLETA
+- **Fase 6**: ✅ **Configurações** - COMPLETA
+- **Fase 7**: ⏳ **Testes e Validação** - PRÓXIMA
+- **Fase 8**: ⏳ **Dashboards e UI** - FUTURA
 
 ---
 

@@ -91,6 +91,92 @@ src/main/java/com/proximaai/domain/entity/
     └── ClusterTask.java
 ```
 
+## [1.3.0] - 2025-01-27
+
+### **Adicionado**
+- **APIs REST Completas para IA**
+  - `DelayPredictionController`: APIs para predição de atrasos com ML
+  - `AllocationRecommendationController`: APIs para recomendações de alocação
+  - `ProjectSummaryController`: APIs para resumos automáticos de projetos
+  - `SentimentAnalysisController`: APIs para análise de sentimento da equipe
+  - `AIController`: APIs principais para funcionalidades de IA
+
+- **Algoritmos de Machine Learning**
+  - `MLAlgorithmService`: Implementação de algoritmos ML básicos
+  - Regressão linear para predição de atrasos
+  - Análise de correlação para dependências
+  - Clustering K-means para agrupamento de tarefas
+  - Análise de sentimento baseada em palavras-chave
+  - Algoritmo de recomendação por similaridade
+  - Detecção de anomalias usando Z-score
+  - Predição de tendências com média móvel
+  - Otimização de recursos com algoritmo guloso
+
+- **Configurações Avançadas de IA**
+  - `AIConfig`: Configuração centralizada para serviços de IA
+  - Thread pool dedicado para processamento de IA
+  - Configurações de cache para otimização de performance
+  - Suporte a processamento assíncrono
+  - Configurações de OpenAI e modelos de IA
+
+- **Dependências de Machine Learning**
+  - Apache Commons Math3 para algoritmos matemáticos
+  - Apache OpenNLP para processamento de linguagem natural
+  - Jackson para serialização JSON
+  - Apache HttpClient para integração com APIs externas
+
+### **Alterado**
+- **Arquitetura de APIs**
+  - Estrutura RESTful completa para todas as funcionalidades de IA
+  - Documentação OpenAPI/Swagger para todas as APIs
+  - Padronização de responses e error handling
+  - Suporte a paginação e filtros avançados
+
+- **Configurações de Sistema**
+  - `application.yml` expandido com configurações de IA
+  - Suporte a múltiplos provedores de IA
+  - Configurações de performance e cache
+  - Thread pools otimizados para processamento de IA
+
+### **Melhorado**
+- **Performance de IA**
+  - Processamento assíncrono para operações pesadas
+  - Cache inteligente para predições e análises
+  - Otimização de algoritmos de ML
+  - Pool de threads dedicado para IA
+
+- **Documentação de APIs**
+  - Documentação completa com Swagger/OpenAPI
+  - Exemplos de uso para todas as APIs
+  - Descrições detalhadas de parâmetros e responses
+  - Tags organizadas por funcionalidade
+
+### **Tecnologias Adicionadas**
+- **Machine Learning**: Apache Commons Math3, OpenNLP
+- **Processamento Assíncrono**: Spring Async, ThreadPoolTaskExecutor
+- **Cache**: Configurações de cache para otimização
+- **HTTP Client**: Apache HttpClient para integrações externas
+
+### **APIs Disponíveis**
+```
+/api/ai/delay-predictions/*          # Predição de atrasos
+/api/ai/allocation-recommendations/* # Recomendações de alocação
+/api/ai/project-summaries/*          # Resumos automáticos
+/api/ai/sentiment-analysis/*         # Análise de sentimento
+/api/ai/*                            # APIs principais de IA
+```
+
+### **Status da Implementação**
+- **Fase 1**: ✅ **Entidades JPA** - COMPLETA
+- **Fase 2**: ✅ **Repositórios JPA** - COMPLETA  
+- **Fase 3**: ✅ **Serviços de IA** - COMPLETA
+- **Fase 4**: ✅ **Controllers REST** - COMPLETA
+- **Fase 5**: ✅ **Algoritmos ML** - COMPLETA
+- **Fase 6**: ✅ **Configurações** - COMPLETA
+- **Fase 7**: ⏳ **Testes e Validação** - PRÓXIMA
+
+---
+
 ## [1.2.0] - 2025-08-24
 
 ### **Adicionado**

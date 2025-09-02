@@ -99,6 +99,17 @@ public class SentimentAnalysis {
     @Enumerated(EnumType.STRING)
     private AlertSeverity alertSeverity = AlertSeverity.NONE;
 
+    @Column(name = "collaboration_score")
+    @Positive
+    private BigDecimal collaborationScore; // 0.0000 a 1.0000
+
+    @Column(name = "motivation_score")
+    @Positive
+    private BigDecimal motivationScore; // 0.0000 a 1.0000
+
+    @Column(name = "recommendations")
+    private String recommendations; // JSON com recomendações
+
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
@@ -389,6 +400,30 @@ public class SentimentAnalysis {
 
     public void setAlertSeverity(AlertSeverity alertSeverity) {
         this.alertSeverity = alertSeverity;
+    }
+
+    public BigDecimal getCollaborationScore() {
+        return collaborationScore;
+    }
+
+    public void setCollaborationScore(BigDecimal collaborationScore) {
+        this.collaborationScore = collaborationScore;
+    }
+
+    public BigDecimal getMotivationScore() {
+        return motivationScore;
+    }
+
+    public void setMotivationScore(BigDecimal motivationScore) {
+        this.motivationScore = motivationScore;
+    }
+
+    public String getRecommendations() {
+        return recommendations;
+    }
+
+    public void setRecommendations(String recommendations) {
+        this.recommendations = recommendations;
     }
 
     public LocalDateTime getCreatedAt() {

@@ -103,7 +103,7 @@ public class Task {
     private List<TaskDependency> dependencies = new ArrayList<>();
 
     @OneToMany(mappedBy = "prerequisiteTask", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<TaskDependency> prerequisites = new ArrayList<>();
+    private List<TaskDependency> prerequisiteFor = new ArrayList<>();
 
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)
@@ -368,6 +368,22 @@ public class Task {
         if ("IN_PROGRESS".equals(column) && startDate == null) {
             this.startDate = LocalDate.now();
         }
+    }
+
+    public List<TaskDependency> getDependencies() {
+        return dependencies;
+    }
+
+    public void setDependencies(List<TaskDependency> dependencies) {
+        this.dependencies = dependencies;
+    }
+
+    public List<TaskDependency> getPrerequisiteFor() {
+        return prerequisiteFor;
+    }
+
+    public void setPrerequisiteFor(List<TaskDependency> prerequisiteFor) {
+        this.prerequisiteFor = prerequisiteFor;
     }
 
     // Enums
